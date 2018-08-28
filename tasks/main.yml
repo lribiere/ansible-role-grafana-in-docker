@@ -1,0 +1,19 @@
+---
+
+- name: create grafana local directories
+  become: true
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: true
+  with_items:
+    - "{{ grafana_conf_location }}"
+
+- name: "Create configuration"
+  become: true
+  notify: restart grafana
+  template:
+    src: "datasource.yaml.j2"
+    dest: "{{ grafana_conf_location }}/datasource.yaml"
+
+- include_tasks: run_container.yml

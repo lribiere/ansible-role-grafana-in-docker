@@ -1,0 +1,11 @@
+---
+
+grafana_container_name: "grafana"
+grafana_docker_networks: []
+grafana_container_restart_policy: "always"
+grafana_conf_location: "/opt/docker-data/{{ grafana_container_name }}/conf"
+
+datasource_type: "" # can be CloudWatch, Elasticsearch, Graphite, InfluxDB, MySQL, OpenTSDB, PostgreSQL or Prometheus
+datasource_database: ""
+datasource_hostname: "" # hostname of the server the db is running on
+datasource_port: "" # database port
