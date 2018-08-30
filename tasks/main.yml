@@ -8,7 +8,7 @@
     recurse: true
   with_items:
     - "{{ grafana_conf_location }}"
-    - "{{ grafana_dashboards_location }}"
+    - "{{ grafana_dashboards_location_on_host }}"
 
 - name: "Create datasource configuration file"
   become: true
