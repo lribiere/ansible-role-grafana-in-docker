@@ -18,4 +18,6 @@
     networks: "{{ grafana_docker_networks }}"
     restart_policy: "{{ grafana_container_restart_policy }}"
     volumes:
-      - "{{ grafana_conf_location }}/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml:ro"
+      - "{{ grafana_conf_location }}/datasource_config.yaml:/etc/grafana/provisioning/datasources/datasource_config.yaml:ro"
+      - "{{ grafana_conf_location }}/dashboards_config.yaml:/etc/grafana/provisioning/dashboards/dashboards_config.yaml:ro"
+      - "{{ grafana_conf_location }}/dashboards:{{ grafana_dashboards_location_on_container }}::ro"

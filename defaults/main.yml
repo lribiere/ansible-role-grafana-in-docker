@@ -4,8 +4,11 @@ grafana_container_name: "grafana"
 grafana_docker_networks: []
 grafana_container_restart_policy: "always"
 grafana_conf_location: "/opt/docker-data/{{ grafana_container_name }}/conf"
+grafana_dashboards_location_on_host: "/opt/docker-data/{{ grafana_container_name }}/dashboards/"
 
-datasource_type: "" # can be CloudWatch, Elasticsearch, Graphite, InfluxDB, MySQL, OpenTSDB, PostgreSQL or Prometheus
+datasource_type: "" # can be cloudwatch, elasticsearch, graphite, influxdb, mysql, opentsdb, postgresql or prometheus
 datasource_database: ""
 datasource_hostname: "" # hostname of the server the db is running on
 datasource_port: "" # database port
+
+grafana_dashboards_location_on_container: "/home/dashboards" # directory where to store/load dashboards on container
