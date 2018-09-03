@@ -38,7 +38,6 @@ grafana_dashboards_location variable defines the location on host where dashboar
     dest: /some/absolute/path/on/destination/host
 ```
 
-
 Dependencies
 ------------
 
@@ -46,7 +45,7 @@ Dependencies
 Example Playbook
 ----------------
 
-ansible-playbook tests/test.yml --ask-become-pass -e grafana_conf_location="$(pwd)/.workdir/"
+ansible-playbook tests/test.yml --ask-become-pass -e grafana_conf_location="$(pwd)/.workdir/conf" -e grafana_dashboards_location_on_host="$(pwd)/.workdir/dashboards" -e datasource_hostname="influx" -e datasource_port="1234"
 On MacsOS due to Docker Machine root limitation, add : -e ansible_become_user="$(whoami)"
 
 	- hosts: localhost

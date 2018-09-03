@@ -20,4 +20,4 @@
     volumes:
       - "{{ grafana_conf_location }}/datasource_config.yaml:/etc/grafana/provisioning/datasources/datasource_config.yaml:ro"
       - "{{ grafana_conf_location }}/dashboards_config.yaml:/etc/grafana/provisioning/dashboards/dashboards_config.yaml:ro"
-      - "{{ grafana_conf_location }}/dashboards:{{ grafana_dashboards_location_on_container }}::ro"
+      - "{{ grafana_dashboards_location_on_host }}:{{ grafana_dashboards_location_on_container }}:rw"

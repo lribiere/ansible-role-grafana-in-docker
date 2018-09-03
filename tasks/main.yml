@@ -22,6 +22,6 @@
   notify: restart grafana
   template:
     src: "dashboard_config.yaml.j2"
-    dest: "{{ grafana_conf_location }}/dashboard_config.yaml"
+    dest: "{{ grafana_conf_location }}/dashboards_config.yaml"
 
 - include_tasks: run_container.yml

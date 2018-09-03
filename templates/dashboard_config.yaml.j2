@@ -1,6 +1,11 @@
+apiVersion: 1
 
-- name: 'default' # name of this dashboard configuration (not dashboard itself)
-  folder: ''      # name of the folder to put the dashboard
-  type: 'file'    # type of dashboard description (json files)
+providers:
+- name: 'default'
+  orgId: 1
+  folder: ''
+  type: file
+  disableDeletion: true
+  updateIntervalSeconds: 3 #how often Grafana will scan for changed dashboards
   options:
-    folder: '{{ grafana_dashboards_location_on_container }}' # where dashboards are (on container)
+    path: {{ grafana_dashboards_location_on_container }}
