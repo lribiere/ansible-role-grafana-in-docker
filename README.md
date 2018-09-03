@@ -13,7 +13,7 @@ Role Variables
 --------------
 
 ### Mandatory variables (Grafana will not be connected to any database if those are not set)
-Specify the following variable to specify the datasource Grafana should connect to :
+The following variables should be set to specify the datasource Grafana should connect to :
 ```yaml
 datasource_type: "" # can be CloudWatch, Elasticsearch, Graphite, InfluxDB, MySQL, OpenTSDB, PostgreSQL or Prometheus
 datasource_database: ""
@@ -45,12 +45,19 @@ Dependencies
 Example Playbook
 ----------------
 
-ansible-playbook tests/test.yml --ask-become-pass -e grafana_conf_location="$(pwd)/.workdir/conf" -e grafana_dashboards_location_on_host="$(pwd)/.workdir/dashboards" -e datasource_hostname="influx" -e datasource_port="1234"
-On MacsOS due to Docker Machine root limitation, add : -e ansible_become_user="$(whoami)"
+Checkout tests/test.yml file :
 
 	- hosts: localhost
 	  roles:
 	    - ../ansible-role-grafana-in-docker
+
+Usage :
+
+```bash
+ansible-playbook tests/test.yml --ask-become-pass -e grafana_conf_location="$(pwd)/.workdir/conf" -e grafana_dashboards_location_on_host="$(pwd)/.workdir/dashboards" -e datasource_hostname="influx" -e datasource_port="1234"
+```
+
+On MacsOS due to Docker Machine root limitation, add : -e ansible_become_user="$(whoami)"
 
 
 License
