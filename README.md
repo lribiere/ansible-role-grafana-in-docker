@@ -28,6 +28,7 @@ grafana_docker_networks: []
 grafana_container_restart_policy: "always"
 grafana_conf_location: "/opt/docker-data/{{ grafana_container_name }}/conf"
 grafana_dashboards_location: "/opt/docker-data/{{ grafana_container_name }}/dashboards"
+grafana_dashboards_location_on_container: "/home/dashboards" # directory where to store/load dashboards on container
 ```
 grafana_dashboards_location variable defines the location on host where dashboard (json files) should be put. None exist by default. You would then need to add a play in tasks/main.yml to copy your dashbords to host. This could look like this : 
 ```yaml
