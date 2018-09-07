@@ -39,6 +39,11 @@ grafana_dashboards_location variable defines the location on host where dashboar
     dest: /some/absolute/path/on/destination/host
 ```
 
+Finally, grafana admin password (in defaults/main.yml file) can be updated in secret.yml file that should be in .gitignore file
+```yaml
+grafana_admin_password: "admin"
+```
+
 Dependencies
 ------------
 

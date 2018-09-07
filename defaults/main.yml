@@ -12,3 +12,4 @@ datasource_hostname: "" # hostname of the server the db is running on
 datasource_port: "" # database port
 
 grafana_dashboards_location_on_container: "/home/dashboards" # directory where to store/load dashboards on container
+grafana_admin_password: "admin"
