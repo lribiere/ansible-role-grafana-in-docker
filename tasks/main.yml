@@ -10,14 +10,14 @@
     - "{{ grafana_conf_location }}"
     - "{{ grafana_dashboards_location_on_host }}"
 
-- name: "Create datasource configuration file"
+- name: "Create datasources configuration file"
   become: true
   notify: restart grafana
   template:
     src: "datasource_config.yaml.j2"
     dest: "{{ grafana_conf_location }}/datasource_config.yaml"
 
-- name: "Create dashbords configuration file"
+- name: "Create dashboards configuration file"
   become: true
   notify: restart grafana
   template:

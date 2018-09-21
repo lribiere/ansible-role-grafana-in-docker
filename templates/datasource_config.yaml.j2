@@ -5,11 +5,12 @@ apiVersion: 1
 
 # list of datasources that will be inserted/updated
 datasources:
-  - name: {{ datasource_type }}
-    type: {{ datasource_type }}
+{% for datasource in datasources %}
+  - name: {{ datasource.datasource_name }}
+    type: {{ datasource.datasource_type }}
     access: proxy
-    database: {{ datasource_database }}
-    url: http://{{ datasource_hostname }}:{{ datasource_port }}
+    database: {{ datasource.datasource_database }}
+    url: http://{{ datasource.datasource_hostname }}:{{ datasource.datasource_port }}
     editable: false
     is_default: true
-  
+{% endfor %}
